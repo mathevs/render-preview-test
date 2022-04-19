@@ -1,0 +1,21 @@
+{
+  "name": "render-preview-test",
+  "version": "1.0.0",
+  "description": "Simple rest api with connection to db to test render preview feature",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "start:dev": "nodemon src/index.js",
+    "db:migrate:latest": "knex migrate:latest --knexfile config/db.js",
+    "db:migrate:down": "knex migrate:down --knexfile config/db.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "knex": "^1.0.7",
+    "nodemon": "^2.0.15",
+    "pg": "^8.7.3"
+  }
+}

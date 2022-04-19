@@ -1,0 +1,16 @@
+version: '3'
+services:
+  the-expert-db:
+    image: postgres:13.3
+    restart: always
+    ports:
+      - '${POSTGRES_PORT}:5432'
+    environment:
+      POSTGRES_USER: 'postgres'
+      POSTGRES_PASSWORD: 'postgres'
+      POSTGRES_DB: '${DB_NAME}'
+    volumes:
+      - the-render-preview-test:/var/lib/postgresql/data
+
+volumes:
+  the-render-preview-test:
