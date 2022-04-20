@@ -11,8 +11,9 @@ app.get('/', async (req, res) => {
   try {
     const items = await knex.from('items').select('*')
     res.json({ items, preview_override: process.env.TEST_ENV_VARIABLE })
-  } catch(error) {
+  } catch (error) {
     console.error(error)
+    res.json({ error: 'Cannot get data from database' })
   }
 })
 
