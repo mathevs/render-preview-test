@@ -10,6 +10,7 @@ const port = process.env.PORT || 3001
 app.get('/', async (req, res) => {
   try {
     const items = await knex.from('items').select('*')
+    console.log('test from branch')
     res.json({ items, preview_override: process.env.TEST_ENV_VARIABLE })
   } catch (error) {
     console.error(error)
