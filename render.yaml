@@ -8,6 +8,7 @@ services:
     startCommand: npm start
     envVars:
       - key: TEST_ENV_VARIABLE
+        value: this-is-variable-for-normal-deploy
         previewValue: this-is-variable-from-preview
       - key: DB_CONNECTION_STRING
         fromDatabase:
