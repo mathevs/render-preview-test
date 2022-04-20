@@ -1,0 +1,15 @@
+previewsEnabled: true
+previewsExpireAfterDays: 3
+services:
+  - type: web
+    env: node
+    name: render-preview-test
+    envVars:
+      - key: TEST_ENV_VARIABLE
+        previewValue: this-is-variable-from-preview
+      - key: DB_CONNECTION_STRING
+        fromDatabase:
+          name: expert-preview-test
+          property: connectionString
+databases:
+  - name: expert-preview-test
