@@ -4,6 +4,8 @@ services:
   - type: web
     env: node
     name: render-preview-test
+    buildCommand: npm ci && npm run db:migrate:latest
+    startCommand: npm start
     envVars:
       - key: TEST_ENV_VARIABLE
         previewValue: this-is-variable-from-preview
@@ -11,5 +13,6 @@ services:
         fromDatabase:
           name: expert-preview-test
           property: connectionString
+      - fromGroup: BACKEND_ENVIRONMENTS
 databases:
   - name: expert-preview-test
