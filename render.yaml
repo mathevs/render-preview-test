@@ -4,16 +4,17 @@ services:
   - type: web
     env: node
     name: render-preview-test
-    buildCommand: npm ci && npm run db:migrate:latest
+    buildCommand: npm ci
+    # buildCommand: npm ci && npm run db:migrate:latest
     startCommand: npm start
     envVars:
       - key: TEST_ENV_VARIABLE
         value: this-is-variable-from-normal-deploy
         previewValue: this-is-variable-from-preview
-      - key: DB_CONNECTION_STRING
-        fromDatabase:
-          name: expert-preview-test
-          property: connectionString
+      # - key: DB_CONNECTION_STRING
+      #   fromDatabase:
+      #     name: expert-preview-test
+      #     property: connectionString
       # - fromGroup: BACKEND_ENVIRONMENTS
-databases:
-  - name: expert-preview-test
+# databases:
+#   - name: expert-preview-test
