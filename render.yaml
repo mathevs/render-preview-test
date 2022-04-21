@@ -1,5 +1,5 @@
 previewsEnabled: true
-previewsExpireAfterDays: 3
+previewsExpireAfterDays: 1
 services:
   - type: web
     env: node
@@ -8,12 +8,12 @@ services:
     startCommand: npm start
     envVars:
       - key: TEST_ENV_VARIABLE
-        sync: false
+        value: this-is-variable-from-normal-deploy
         previewValue: this-is-variable-from-preview
       - key: DB_CONNECTION_STRING
         fromDatabase:
           name: expert-preview-test
           property: connectionString
-      - fromGroup: BACKEND_ENVIRONMENTS
+      # - fromGroup: BACKEND_ENVIRONMENTS
 databases:
   - name: expert-preview-test
