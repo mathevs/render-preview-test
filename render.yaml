@@ -4,7 +4,6 @@ services:
   - type: web
     env: node
     name: render-preview-test
-    buildCommand: npm ci
     buildCommand: npm ci && npm run db:migrate:latest
     envVars:
       - key: TEST_ENV_VARIABLE
