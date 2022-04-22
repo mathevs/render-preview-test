@@ -26,6 +26,7 @@ envVarGroups:
       - key: NEW_TEST_ENV
         value: newly-added-env-variable
       - key: HOSTNAME
-        fromDatabase:
+        fromService:
+          type: node
           name: render-preview-test
           property: hostport
