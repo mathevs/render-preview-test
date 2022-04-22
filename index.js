@@ -9,10 +9,10 @@ const port = process.env.PORT || 3001
 
 app.get('/', async (req, res) => {
   try {
-    // const items = await knex.from('items').select('*')
-    // res.json({ items, preview_override: process.env.TEST_ENV_VARIABLE })
+    const items = await knex.from('items').select('*')
     console.log('test')
-    res.json({ preview_override: process.env.TEST_ENV_VARIABLE })
+    res.json({ items, preview_override: process.env.TEST_ENV_VARIABLE })
+    // res.json({ preview_override: process.env.TEST_ENV_VARIABLE })
   } catch (error) {
     console.error(error)
     res.json({ error: 'Cannot get data from database' })
