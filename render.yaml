@@ -5,6 +5,7 @@ services:
     env: node
     name: render-preview-test
     buildCommand: npm ci && npm run db:migrate:latest
+    startCommand: npm start
     envVars:
       - key: TEST_ENV_VARIABLE
         sync: false
