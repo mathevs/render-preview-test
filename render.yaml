@@ -12,7 +12,7 @@ services:
       #   previewValue: this-is-variable-from-preview
       - key: HOSTNAME
         fromService:
-          type: node
+          type: web
           name: render-preview-test
           property: hostport
       - key: DB_CONNECTION_STRING
