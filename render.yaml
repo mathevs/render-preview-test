@@ -7,9 +7,14 @@ services:
     buildCommand: npm ci && npm run db:migrate:latest
     startCommand: npm start
     envVars:
-      - key: TEST_ENV_VARIABLE
-        sync: false
-        previewValue: this-is-variable-from-preview
+      # - key: TEST_ENV_VARIABLE
+      #   sync: false
+      #   previewValue: this-is-variable-from-preview
+      - key: HOSTNAME
+        fromService:
+          type: web
+          name: render-preview-test
+          property: hostport
       - key: DB_CONNECTION_STRING
         fromDatabase:
           name: expert-preview-test
@@ -17,3 +22,11 @@ services:
       - fromGroup: BACKEND_ENVIRONMENTS
 databases:
   - name: expert-preview-test
+envVarGroups:
+  - name: BACKEND_ENVIRONMENTS
+    envVars:
+      - key: TEST_ENV_VARIABLE
+        sync: false
+        previewValue: this-is-variable-from-preview
+      - key: NEW_TEST_ENV
+        value: newly-added-env-variable
