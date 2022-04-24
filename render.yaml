@@ -10,11 +10,11 @@ services:
       # - key: TEST_ENV_VARIABLE
       #   sync: false
       #   previewValue: this-is-variable-from-preview
-      # - key: HOSTNAME
-      #   fromService:
-      #     type: web
-      #     name: render-preview-test
-      #     property: hostport
+      - key: HOSTNAME
+        fromService:
+          type: web
+          name: render-preview-test
+          property: hostport
       - key: DB_CONNECTION_STRING
         fromDatabase:
           name: expert-preview-test
@@ -30,8 +30,3 @@ envVarGroups:
         previewValue: this-is-variable-from-preview
       - key: NEW_TEST_ENV
         value: newly-added-env-variable
-      - key: HOSTNAME
-        fromService:
-          type: web
-          name: render-preview-test
-          property: hostport
