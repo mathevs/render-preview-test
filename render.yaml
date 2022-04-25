@@ -5,10 +5,8 @@ services:
     env: node
     name: render-preview-test
     buildCommand: npm ci && npm run db:migrate:latest
-    startCommand: RUN_EVNIRONMENT="$HOSTNAME.onrender.com" npm start
+    startCommand: RUN_EVNIRONMENT=${HOSTNAME}onrender" npm start
     envVars:
-      - key: INTERPOLATED_VARIABLE
-        value: "www.$HOSTNAME"
       - key: HOSTNAME
         fromService:
           type: web
