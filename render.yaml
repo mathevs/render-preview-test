@@ -7,9 +7,8 @@ services:
     buildCommand: npm ci && npm run db:migrate:latest
     startCommand: npm start
     envVars:
-      # - key: TEST_ENV_VARIABLE
-      #   sync: false
-      #   previewValue: this-is-variable-from-preview
+      - key: INTERPOLATED_VARIABLE
+        value: ${HOSTNAME}
       - key: HOSTNAME
         fromService:
           type: web
