@@ -5,10 +5,10 @@ services:
     env: node
     name: render-preview-test
     buildCommand: npm ci && npm run db:migrate:latest
-    startCommand: npm start
+    startCommand: RUN_EVNIRONMENT=$HOSTNAME npm start
     envVars:
       - key: INTERPOLATED_VARIABLE
-        value: ${HOSTNAME}
+        value: $HOSTNAME
       - key: HOSTNAME
         fromService:
           type: web
