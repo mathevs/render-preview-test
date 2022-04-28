@@ -12,8 +12,6 @@ services:
           type: web
           name: render-preview-test
           property: host
-      - key: ONLY_IN_PROD
-        sync: false
       - key: DB_CONNECTION_STRING
         fromDatabase:
           name: expert-preview-test
@@ -27,3 +25,5 @@ envVarGroups:
       - key: TEST_ENV_VARIABLE
         sync: false
         previewValue: this-is-variable-from-preview
+      - key: ONLY_IN_PROD
+        sync: false
