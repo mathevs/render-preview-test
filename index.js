@@ -11,7 +11,15 @@ app.get('/', async (req, res) => {
   try {
     const items = await knex.from('items').select('*')
     console.log('test')
-    res.json({ items, preview_override: process.env.TEST_ENV_VARIABLE, newTestEnv: process.env.NEW_TEST_ENV, envFromDashboard: process.env.ENV_FROM_DASHBOARD, hostname: process.env.HOSTNAME })
+    res.json({
+      items,
+      run_evironment: process.env.RUN_EVNIRONMENT,
+      preview_override: process.env.TEST_ENV_VARIABLE,
+      newTestEnv: process.env.NEW_TEST_ENV,
+      envFromDashboard: process.env.ENV_FROM_DASHBOARD,
+      hostname: process.env.HOSTNAME,
+      onlyInProd: process.env.ONLY_IN_PROD,
+    })
     // res.json({ preview_override: process.env.TEST_ENV_VARIABLE })
   } catch (error) {
     console.error(error)

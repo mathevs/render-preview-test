@@ -5,16 +5,15 @@ services:
     env: node
     name: render-preview-test
     buildCommand: npm ci && npm run db:migrate:latest
-    startCommand: npm start
+    startCommand: RUN_EVNIRONMENT="${HOSTNAME}onrender" npm start
     envVars:
-      # - key: TEST_ENV_VARIABLE
-      #   sync: false
-      #   previewValue: this-is-variable-from-preview
       - key: HOSTNAME
         fromService:
           type: web
           name: render-preview-test
-          property: hostport
+          property: host
+      - key: ONLY_IN_PROD
+        sync: false
       - key: DB_CONNECTION_STRING
         fromDatabase:
           name: expert-preview-test
@@ -28,5 +27,3 @@ envVarGroups:
       - key: TEST_ENV_VARIABLE
         sync: false
         previewValue: this-is-variable-from-preview
-      - key: NEW_TEST_ENV
-        value: newly-added-env-variable
