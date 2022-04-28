@@ -21,3 +21,5 @@ envVarGroups:
       - key: TEST_ENV_VARIABLE
         sync: false
         previewValue: this-is-variable-from-preview
+      - key: TEST_VARIABLE_WITH_NO_SYNC
+        sync: false

@@ -15,6 +15,7 @@ app.get('/', async (req, res) => {
       previewOverride: process.env.TEST_ENV_VARIABLE,
       secretVariable: process.env.SECRET_VARIABLE,
       secretVariableFromNonYamlGroup: process.env.NON_YAML_GROUP_SECRET,
+      testVariableWithNoSync: process.env.TEST_VARIABLE_WITH_NO_SYNC,
     })
     // res.json({ preview_override: process.env.TEST_ENV_VARIABLE })
   } catch (error) {
