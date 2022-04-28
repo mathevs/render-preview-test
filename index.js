@@ -17,6 +17,7 @@ app.get('/', async (req, res) => {
       newTestEnv: process.env.NEW_TEST_ENV,
       envFromDashboard: process.env.ENV_FROM_DASHBOARD,
       hostname: process.env.HOSTNAME,
+      onlyInProd: process.env.ONLY_IN_PROD,
     })
     // res.json({ preview_override: process.env.TEST_ENV_VARIABLE })
   } catch (error) {
