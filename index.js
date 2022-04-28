@@ -13,12 +13,9 @@ app.get('/', async (req, res) => {
     console.log('test')
     res.json({
       items,
-      run_evironment: process.env.RUN_EVNIRONMENT,
-      preview_override: process.env.TEST_ENV_VARIABLE,
-      newTestEnv: process.env.NEW_TEST_ENV,
-      envFromDashboard: process.env.ENV_FROM_DASHBOARD,
-      hostname: process.env.HOSTNAME,
-      onlyInProd: process.env.ONLY_IN_PROD,
+      previewOverride: process.env.TEST_ENV_VARIABLE,
+      secretVariable: process.env.SECRET_VARIABLE,
+      secretVariableFromNonYamlGroup: process.env.NON_YAML_GROUP_SECRET,
     })
     // res.json({ preview_override: process.env.TEST_ENV_VARIABLE })
   } catch (error) {
