@@ -23,3 +23,5 @@ envVarGroups:
         previewValue: this-is-variable-from-preview
       - key: TEST_VARIABLE_WITH_NO_SYNC
         sync: false
+      - key: VARIABLE_ADDED_ONLY_IN_BRANCH
+        value: only-branch-variable

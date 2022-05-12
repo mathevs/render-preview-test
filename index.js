@@ -17,6 +17,7 @@ app.get('/', async (req, res) => {
       secretVariable: process.env.SECRET_VARIABLE,
       secretVariableFromNonYamlGroup: process.env.NON_YAML_GROUP_SECRET,
       testVariableWithNoSync: process.env.TEST_VARIABLE_WITH_NO_SYNC,
+      onlyInBranchVariable: process.env.VARIABLE_ADDED_ONLY_IN_BRANCH,
     })
     // res.json({ preview_override: process.env.TEST_ENV_VARIABLE })
   } catch (error) {
