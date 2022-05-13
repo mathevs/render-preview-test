@@ -3,6 +3,7 @@ previewsExpireAfterDays: 1
 services:
   - type: web
     env: node
+    plan: free
     name: render-preview-test
     buildCommand: npm ci && npm run db:migrate:latest
     startCommand: npm start
