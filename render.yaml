@@ -4,7 +4,6 @@ services:
   - type: web
     env: node
     plan: free
-    previewPlan: free
     name: render-preview-test
     buildCommand: npm ci && npm run db:migrate:latest
     startCommand: npm start
