@@ -24,4 +24,3 @@ envVarGroups:
         previewValue: this-is-variable-from-preview
       - key: TEST_VARIABLE_WITH_NO_SYNC
         sync: false
-å
