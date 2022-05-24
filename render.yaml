@@ -3,6 +3,7 @@ previewsExpireAfterDays: 1
 services:
   - type: web
     env: node
+    plan: free
     name: render-preview-test
     buildCommand: npm ci && npm run db:migrate:latest
     startCommand: npm start
@@ -18,7 +19,7 @@ databases:
 envVarGroups:
   - name: BACKEND_ENVIRONMENTS
     envVars:
-      - key: TEST_ENV_VARIABLE
+      - key: ONLY_PREVIEW
         sync: false
         previewValue: this-is-variable-from-preview
       - key: TEST_VARIABLE_WITH_NO_SYNC
