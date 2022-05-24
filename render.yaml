@@ -19,8 +19,9 @@ databases:
 envVarGroups:
   - name: BACKEND_ENVIRONMENTS
     envVars:
-      - key: TEST_ENV_VARIABLE
+      - key: ONLY_PREVIEW
         sync: false
         previewValue: this-is-variable-from-preview
       - key: TEST_VARIABLE_WITH_NO_SYNC
         sync: false
+å
